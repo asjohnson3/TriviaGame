@@ -1,22 +1,39 @@
 
-var time = 1000 * 30;
+// var time = 1000 * 30;
 
-setTimeout(display, time);
-setTimeout(timeUp, 1000 * 15);
+// setTimeout(timeUp, time);
+// setTimeout(timeUp, 1000 * 15);
 
 
-function timeUp() {
+// function timeUp() {
 
   // in the element with an id of time-left add an h2 saying Time's Up!
   // console log done
-  console.log("done");
-  $("#time-left").append("<h2>Time's Up!</h2>");
-  console.log("time is up");
+  // console.log("done");
+  // $("#time-left").append("<h2>Time's Up!</h2>");
+  // console.log("time is up");
 
   //  The following line will play the audio file we linked to above:
 //   audio.play();
+// }
+var counter = setInterval(countdown,1000);
+var timeleft = 11;
+
+function countdown(){
+  if (timeleft > 0){
+    timeleft--;
+  }else {
+    clearInterval(counter);
+    console.log("done");
+    return;
+  }
+  $("#time").html(timeleft+"s");
 }
 
+
+
+
+// setInterval()
 // function startTimer(duration, display) {
 //     var timer = duration, minutes, seconds;
 //     setInterval(function () {
@@ -32,10 +49,13 @@ function timeUp() {
 //             timer = duration;
 //         }
 //     }, 1000);
+//     console.log(timer);
 // }
 
+
 // jQuery(function ($) {
-//     var fiveMinutes = 60 * 5,
+//     var fiveMinutes = 60 * 2,
 //         display = $('#time');
 //     startTimer(fiveMinutes, display);
 // });
+
