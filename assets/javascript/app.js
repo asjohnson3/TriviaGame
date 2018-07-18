@@ -17,20 +17,47 @@
 //   audio.play();
 // }
 var counter = setInterval(countdown,1000);
-var timeleft = 11;
+var timeleft = 10;
 
 function countdown(){
   if (timeleft > 0){
     timeleft--;
   }else {
     clearInterval(counter);
-    console.log("done");
+    alert("done");
     return;
   }
   $("#time").html(timeleft+"s");
 }
 
+var submitAnswer = function() {
 
+  var radios = document.getElementsByName('choice');
+  var val= "";
+  for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+         val = radios[i].value; 
+         break;
+       }
+  }
+
+  var radios = document.getElementsByName('second');
+  var value= "";
+  for (var i = 0, length = radios.length; i < length; i++) {
+      if (radios[i].checked) {
+         value = radios[i].value; 
+         break;
+       }
+  }
+  
+  if (val == "" || value =="") {
+    alert('please select choice answer');
+  } else if ( val == "Scripting" && value == "Programming") {
+    alert('Answer is correct !');
+  } else {
+    alert('Answer is wrong');
+  }
+};
 
 
 // setInterval()

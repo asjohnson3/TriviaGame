@@ -6,13 +6,52 @@
 
     <meta charset="UTF-8">
     <title>Simple Timer</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
 
   </head>
 
   <body>
 
     <div id="time-left"></div>
-    <div id = "time"></div>
+    <div id = "time">10</div>
+
+    <div class = "Q1">
+      <h1>Q1</h1><br>
+
+      <form>
+        <input type="radio" name="choice" value="Scripting"> Scripting
+        <input type="radio" name="choice" value="Programming"> Programming
+        <input type="radio" name="choice" value="Application"> Application
+        <input type="radio" name="choice" value="None of These"> None of These
+      </form>
+
+      <h1>Q2</h1><br>
+      <form>
+        <input type="radio" name="second" value="Scripting"> Scripting
+        <input type="radio" name="second" value="Programming"> Programming
+        <input type="radio" name="second" value="Application"> Application
+        <input type="radio" name="second" value="None of These"> None of These
+      </form>
+
+      <h1>Q3</h1><br>
+      <form>
+        <input type="radio" name="choice" value="Scripting"> Scripting
+        <input type="radio" name="choice" value="Programming"> Programming
+        <input type="radio" name="choice" value="Application"> Application
+        <input type="radio" name="choice" value="None of These"> None of These
+      </form>
+
+      <h1>Q4</h1><br>
+      <form>
+        <input type="radio" name="choice" value="Scripting"> Scripting
+        <input type="radio" name="choice" value="Programming"> Programming
+        <input type="radio" name="choice" value="Application"> Application
+        <input type="radio" name="choice" value="None of These"> None of These
+      </form>
+  
+      <button onclick="submitAnswer()">Submit Answer</button>
+    </div>
+
 
 
     <!-- jQuery -->
@@ -22,5 +61,7 @@
     <script src="assets/javascript/app.js"></script>
 
   </body>
+
+
 
 </html>
