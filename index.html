@@ -7,47 +7,55 @@
     <meta charset="UTF-8">
     <title>Simple Timer</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="assets/css/style.css">
   </head>
 
   <body>
 
-    <div id="time-left"></div>
-    <div id = "time">10</div>
+    <div class="jumbotron">
+      <h1>Trivia Questions!</h1>
+      <div id = "time"><h2>10s</h2></div>
+    </div>
+    <div id="results"></div>
 
-    <div class = "Q1">
+
+    <div class = "questions">
       <h1>Q1</h1><br>
 
       <form>
-        <input type="radio" name="choice" value="Scripting"> Scripting
-        <input type="radio" name="choice" value="Programming"> Programming
-        <input type="radio" name="choice" value="Application"> Application
-        <input type="radio" name="choice" value="None of These"> None of These
+        <input type="radio" name="one" value="Scripting"> Scripting
+        <input type="radio" name="one" value="Programming"> Programming
+        <input type="radio" name="one" value="Application"> Application
+        <input type="radio" name="one" value="None of These"> None of These
       </form>
+      <br>
 
       <h1>Q2</h1><br>
       <form>
-        <input type="radio" name="second" value="Scripting"> Scripting
-        <input type="radio" name="second" value="Programming"> Programming
-        <input type="radio" name="second" value="Application"> Application
-        <input type="radio" name="second" value="None of These"> None of These
+        <input type="radio" name="two" value="Scripting"> Scripting
+        <input type="radio" name="two" value="Programming"> Programming
+        <input type="radio" name="two" value="Application"> Application
+        <input type="radio" name="two" value="None of These"> None of These
       </form>
+      <br>
 
       <h1>Q3</h1><br>
       <form>
-        <input type="radio" name="choice" value="Scripting"> Scripting
-        <input type="radio" name="choice" value="Programming"> Programming
-        <input type="radio" name="choice" value="Application"> Application
-        <input type="radio" name="choice" value="None of These"> None of These
+        <input type="radio" name="three" value="Scripting"> Scripting
+        <input type="radio" name="three" value="Programming"> Programming
+        <input type="radio" name="three" value="Application"> Application
+        <input type="radio" name="three" value="None of These"> None of These
       </form>
+      <br>
 
       <h1>Q4</h1><br>
       <form>
-        <input type="radio" name="choice" value="Scripting"> Scripting
-        <input type="radio" name="choice" value="Programming"> Programming
-        <input type="radio" name="choice" value="Application"> Application
-        <input type="radio" name="choice" value="None of These"> None of These
+        <input type="radio" name="four" value="Scripting"> Scripting
+        <input type="radio" name="four" value="Programming"> Programming
+        <input type="radio" name="four" value="Application"> Application
+        <input type="radio" name="four" value="None of These"> None of These
       </form>
+      <br>
   
       <button onclick="submitAnswer()">Submit Answer</button>
     </div>

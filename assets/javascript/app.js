@@ -19,6 +19,7 @@
 var counter = setInterval(countdown,1000);
 var timeleft = 10;
 
+
 function countdown(){
   if (timeleft > 0){
     timeleft--;
@@ -27,32 +28,66 @@ function countdown(){
     alert("done");
     return;
   }
-  $("#time").html(timeleft+"s");
+  $("#time").html("<h2>"+timeleft+"s</h2");
 }
 
+
 var submitAnswer = function() {
+  var correct = 0;
 
-  var radios = document.getElementsByName('choice');
-  var val= "";
-  for (var i = 0, length = radios.length; i < length; i++) {
-      if (radios[i].checked) {
-         val = radios[i].value; 
+  var button1 = document.getElementsByName('one');
+  var answer1= "";
+  for (var i = 0, length = button1.length; i < length; i++) {
+      if (button1[i].checked) {
+         answer1 = button1[i].value; 
          break;
        }
   }
 
-  var radios = document.getElementsByName('second');
-  var value= "";
-  for (var i = 0, length = radios.length; i < length; i++) {
-      if (radios[i].checked) {
-         value = radios[i].value; 
+  var button2 = document.getElementsByName('two');
+  var answer2= "";
+  for (var i = 0, length = button2.length; i < length; i++) {
+      if (button2[i].checked) {
+         answer2 = button2[i].value; 
          break;
        }
   }
-  
-  if (val == "" || value =="") {
+
+  var button3 = $("[name='three']");
+  var answer3= "";
+  for (var i = 0, length = button3.length; i < length; i++) {
+      if (button3[i].checked) {
+         answer3 = button3[i].value; 
+         break;
+       }
+  }
+
+  var button4 = document.getElementsByName('four');
+  var answer4= "";
+  for (var i = 0, length = button4.length; i < length; i++) {
+      if (button4[i].checked) {
+         answer4 = button4[i].value; 
+         break;
+       }
+  }
+
+  if (answer1 === "Scripting"){
+    correct++;
+  }
+  if (answer2 === "Programming"){
+    correct++;
+  }
+  if (answer3 === "Scripting"){
+    correct++;
+  }
+  if (answer4 === "Scripting"){
+    correct++;
+  }
+  console.log(correct);
+  $("#results").html('<p>'+'You got ' + correct+ ' correct answers');
+  if (answer1 == "" || answer2 =="" || answer3 =="" ||answer4 =="") {
     alert('please select choice answer');
-  } else if ( val == "Scripting" && value == "Programming") {
+  } else if ( answer1 == "Scripting" && answer2 == "Programming") {
     alert('Answer is correct !');
   } else {
     alert('Answer is wrong');
