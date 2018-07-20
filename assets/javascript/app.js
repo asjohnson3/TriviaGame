@@ -17,13 +17,18 @@
 //   audio.play();
 // }
 var counter = setInterval(countdown,1000);
-var timeleft = 10;
-
+var timeleft = 30;
+var running = 0
 
 function countdown(){
+  if (running === 1){
+    clearInterval(counter);
+    timeleft = timeleft;
+    return;
+  }
   if (timeleft > 0){
     timeleft--;
-  }else {
+  }else{
     clearInterval(counter);
     alert("done");
     return;
@@ -31,10 +36,22 @@ function countdown(){
   $("#time").html("<h2>"+timeleft+"s</h2");
 }
 
+// function countdown(){
+//   if (timeleft > 0){
+//     timeleft--;
+//   }else if (timeleft = 0){
+//     clearInterval(counter);
+//     alert("done");
+//     return;
+//   }else if ($("#results").len){
+// timeleft = timeleft;
+//   }
+// }
+
 
 var submitAnswer = function() {
   var correct = 0;
-
+  running = 1;
   var button1 = document.getElementsByName('one');
   var answer1= "";
   for (var i = 0, length = button1.length; i < length; i++) {
@@ -71,27 +88,29 @@ var submitAnswer = function() {
        }
   }
 
-  if (answer1 === "Scripting"){
+  if (answer1 === "Donald Trump"){
     correct++;
   }
-  if (answer2 === "Programming"){
+  if (answer2 === "8"){
     correct++;
   }
-  if (answer3 === "Scripting"){
+  if (answer3 === "1964"){
     correct++;
   }
-  if (answer4 === "Scripting"){
+  if (answer4 === "Hypertext Markup Language"){
     correct++;
   }
   console.log(correct);
-  $("#results").html('<p>'+'You got ' + correct+ ' correct answers');
+  $("#results").html('<p>'+'You got ' + correct+ ' correct answers!');
+  
   if (answer1 == "" || answer2 =="" || answer3 =="" ||answer4 =="") {
-    alert('please select choice answer');
-  } else if ( answer1 == "Scripting" && answer2 == "Programming") {
-    alert('Answer is correct !');
-  } else {
-    alert('Answer is wrong');
-  }
+    alert('You Failed to Complete the Test!');
+  } 
+  // else if ( answer1 == "Scripting" && answer2 == "Programming") {
+  //   alert('Answer is correct !');
+  // } else {
+  //   alert('Answer is wrong');
+  // }
 };
 
 
